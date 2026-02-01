@@ -34,14 +34,12 @@ features:
 
 <div class="stage-container">
   <a href="./pocketflow-intro/" class="stage-card">
-    <div class="stage-icon">原理</div>
-    <h3>原理篇</h3>
+    <div class="stage-icon">原理篇</div>
     <p>深入理解 PocketFlow 的核心设计：Node 三阶段模型、Flow 图执行、Batch 批处理与 Async 异步并发。</p>
     <span>开始学习 →</span>
   </a>
   <a href="./pocketflow-cases/" class="stage-card">
-    <div class="stage-icon">案例</div>
-    <h3>案例篇</h3>
+    <div class="stage-icon">案例篇</div>
     <p>9 个实战案例：聊天机器人、RAG、写作工作流、搜索 Agent、多 Agent 协作、批处理、并行执行等。</p>
     <span>查看案例 →</span>
   </a>
