@@ -25,7 +25,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    if: github.repository_owner == 'datawhalechina'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,6 +38,8 @@ jobs:
           cache: npm
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
       - name: Install dependencies
         run: npm ci
       - name: Build with VitePress
