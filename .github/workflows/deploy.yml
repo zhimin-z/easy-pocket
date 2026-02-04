@@ -25,6 +25,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    if: github.repository_owner == 'datawhalechina'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
