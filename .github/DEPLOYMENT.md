@@ -2,11 +2,26 @@
 
 This repository uses GitHub Actions to automatically build and deploy the VitePress documentation site to GitHub Pages.
 
-## Initial Setup
+## Automatic Setup
 
-Before the automated deployment workflow can run successfully, GitHub Pages must be enabled in the repository settings:
+The deployment workflow (`.github/workflows/deploy.yml`) is configured to automatically enable GitHub Pages if it's not already enabled, using the `enablement: true` parameter in the `actions/configure-pages@v4` step.
 
-### Steps to Enable GitHub Pages
+When the workflow runs, it will:
+- Automatically enable GitHub Pages if needed
+- Configure Pages to use "GitHub Actions" as the source
+- Build and deploy the VitePress site
+
+The site will be available at: `https://datawhalechina.github.io/easy-pocket/`
+
+## Workflow Triggers
+
+The deployment workflow runs automatically when:
+- Code is pushed to the `main` branch
+- The workflow is manually triggered from the Actions tab
+
+## Manual Setup (Optional)
+
+If you prefer to manually enable GitHub Pages before the first workflow run:
 
 1. Go to your repository on GitHub
 2. Click on **Settings** (requires admin/write access)
@@ -17,28 +32,16 @@ Before the automated deployment workflow can run successfully, GitHub Pages must
 
 5. Save the settings
 
-### After Enabling Pages
-
-Once Pages is enabled, the deployment workflow will run automatically when:
-- Code is pushed to the `main` branch
-- The workflow is manually triggered from the Actions tab
-
-The site will be available at: `https://datawhalechina.github.io/easy-pocket/`
-
 ## Troubleshooting
 
-### Error: "Get Pages site failed"
+### Workflow Permissions
 
-If you see this error in the workflow logs:
-```
-Error: Get Pages site failed. Please verify that the repository has Pages enabled
-```
+The workflow requires the following permissions to automatically enable Pages:
+- `contents: read`
+- `pages: write`
+- `id-token: write`
 
-This means GitHub Pages is not yet enabled. Follow the setup steps above.
-
-### Error: "Resource not accessible by integration"
-
-The default `GITHUB_TOKEN` does not have permissions to programmatically enable Pages. Pages must be manually enabled in repository settings first (see steps above).
+These permissions are already configured in the workflow file.
 
 ## Workflow Details
 
